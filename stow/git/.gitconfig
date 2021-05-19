@@ -1,5 +1,8 @@
 [user]
     email = njncalub@gmail.com
     name = Nap Joseph Calub
+    signingkey = C52C45ABD0FD5D8D
+[commit]
+    gpgsign = true
 [init]
     defaultBranch = main
