@@ -109,14 +109,12 @@ plugins=(
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir -p $ZSH_CACHE_DIR
 fi
 
 source $ZSH/oh-my-zsh.sh
-
 
 # Manually reloads the zsh configuration files.
 function reload() {
@@ -128,8 +126,12 @@ function reload() {
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# aliases
+if [ $(command -v nvim) ]; then
+  alias vim="nvim"
+fi
+
 # Source local settings if it exists.
 if [ -f "$HOME/.local/.zshrc" ]; then
   source "$HOME/.local/.zshrc"
 fi
-
