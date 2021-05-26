@@ -123,6 +123,11 @@ function reload() {
   [ -s ~/.zshrc ] && \. ~/.zshrc
 }
 
+# Manually reattach the SSH key. Only works if the file is in ~/.ssh/$HOSTNAME.
+function ssh-readd() {
+  ssh-add ~/.ssh/$(hostname)
+}
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
