@@ -35,8 +35,10 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 # go
-export GOPATH=/home/$USERNAME/.go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+if [ $(command -v go) ]; then
+  export GOPATH=/home/$USERNAME/go
+  export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+fi
 
 # please
 export PATH="${PATH}:${HOME}/.please/bin"
