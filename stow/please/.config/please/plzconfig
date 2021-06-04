@@ -1,0 +1,6 @@
+; Please config file
+; Please see https://please.build/config.html
+
+[build]
+path = /usr/local/bin:/usr/bin:/bin:/usr/local/go/bin
+
