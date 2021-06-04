@@ -10,3 +10,8 @@ if [ $(command -v direnv) ]; then
   emulate zsh -c "$(direnv export zsh)"
 fi
 
+# please
+if [ $(command -v plz) ]; then
+  source <(plz --completion_script)
+fi
+

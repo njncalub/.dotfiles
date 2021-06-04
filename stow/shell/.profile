@@ -34,3 +34,5 @@ export EDITOR="$VISUAL"
 export GOPATH=/home/$USERNAME/.go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
+# profile
+export PATH="${PATH}:${HOME}/.please/bin"
