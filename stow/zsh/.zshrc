@@ -10,6 +10,10 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH=/usr/share/oh-my-zsh
+# Source local settings if it exists.
+if [ -f "$HOME/.local/oh-my-zsh/path.sh" ]; then
+  source "$HOME/.local/oh-my-zsh/path.sh"
+fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
