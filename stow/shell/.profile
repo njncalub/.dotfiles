@@ -30,9 +30,13 @@ fi
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# Define the tty for gpg. Without this, you'll get "Inappropriate ioctl for device" errors.
+GPG_TTY=$(tty)
+export GPG_TTY
+
 # go
 export GOPATH=/home/$USERNAME/.go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
-# profile
+# please
 export PATH="${PATH}:${HOME}/.please/bin"
