@@ -120,6 +120,19 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
+# keychain
+function start-keychain() {
+  if [ $(command -v keychain) ]; then
+    local KEY_SSH=$(hostname)
+    local KEY_GPG=C52C45ABD0FD5D8D
+    local GPG_AGENT_INFO="~/.gnupg/S.gpg-agent:$(pgrep gpg-agent):1"
+
+    eval $(keychain --nogui --noask --agents "ssh,gpg" --eval $KEY_SSH $KEY_GPG)
+    source ~/.keychain/$(hostname)-sh
+    source ~/.keychain/$(hostname)-sh-gpg
+  fi
+}
+
 # Manually reloads the zsh configuration files.
 function reload() {
   [ -s ~/.zshenv ] && \. ~/.zshenv
