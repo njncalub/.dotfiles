@@ -6,3 +6,7 @@ bind-key -n S-F1 new-window -ak -n help "sh -c '$BYOBU_PAGER $BYOBU_PREFIX/share
 bind-key -n S-F5 new-window -ak "$BYOBU_PREFIX/lib/byobu/include/cycle-status" \; source $BYOBU_PREFIX/share/byobu/profiles/tmuxrc
 bind-key -n M-S-F8 new-window -ak "byobu-layout restore; clear; $SHELL"
 bind-key -n F9 new-window -ak -n config byobu-config
+unbind-key -n C-a
+set -g prefix ^A
+set -g prefix2 F12
+bind a send-prefix
