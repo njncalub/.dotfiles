@@ -85,6 +85,7 @@ plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
+  nvm
 )
 
 # User configuration
