@@ -158,3 +158,8 @@ fi
 if [ -f "$HOME/.local/.zshrc" ]; then
   source "$HOME/.local/.zshrc"
 fi
+
+# homebrew
+if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
