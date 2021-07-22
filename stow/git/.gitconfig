@@ -7,7 +7,34 @@
 [init]
     defaultBranch = main
 [alias]
+    # rewords the commit message
+    reword = commit --amend
+
+    # simply list all commits in one line.
+    ls = log --oneline
+
+    # use a prettier formatting to display the commits.
+    # https://git-scm.com/docs/pretty-formats
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+    # undos your last commit.
+    # the changes will remain in your working tree.
     uncommit = reset --soft HEAD^
+
+    # only overwrite the remote branch if your local copy is aware of all of the commits on the remote branch.
     # https://salferrarello.com/never-git-push-force/
     please = push --force-with-lease
 
+    # use shell commands for aliases:
+    # https://www.atlassian.com/blog/git/advanced-git-aliases
+    # my_alias = "!f() { <your complex command> }; f"
+
+    # destroys all previous commits before $1.
+    # this will NOT keep the changes.
+    # it WILL be gone forever.
+    destroy = "!f() { git reset --hard $1 }; f"
+
+    # recreates the previous commits before $1, while keeping the previous commit timestamps.
+    # this can also sign the previous commits using your signing key.
+    # modified from https://www.reddit.com/r/git/comments/jp59k5/rebase_without_changing_commit_timestamps/
+    recommit = "!f() { git -c rebase.instructionFormat='%s%nexec GIT_COMMITTER_DATE=%ct git commit --amend --no-edit' rebase -i $1; }; f"
