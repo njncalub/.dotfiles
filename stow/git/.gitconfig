@@ -8,4 +8,6 @@
     defaultBranch = main
 [alias]
     uncommit = reset --soft HEAD^
+    # https://salferrarello.com/never-git-push-force/
+    please = push --force-with-lease
 
