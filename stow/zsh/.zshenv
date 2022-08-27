@@ -15,3 +15,8 @@ if [ $(command -v plz) ]; then
   source <(plz --completion_script)
 fi
 
+# deno
+if [ -f "$HOME/.deno/bin/deno" ]; then
+  export DENO_INSTALL="$HOME/.deno"
+  export PATH="$DENO_INSTALL/bin:$PATH"
+fi
